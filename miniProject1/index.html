@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript for Everyone:DOM</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1 id="h1-1">Asabeneh Yetayeh challenges in <span id="h1-2">2020</span></h1>
+            <h2 id="h2">30DaysOfJavaScript Challenge</h2>
+            <h3 id="h3"></h3>
+            <div class = 'lists'>
+                <ul>
+                    <li id="li1">30DaysOfPython Challenge Done</li>
+                    <li id="li2">30DaysOfJavaScript Challenge Ongoing</li>
+                    <li id="li3">30DaysOfReact Challenge Coming</li>
+                    <li id="li4">30DaysOfFullStack Challenge Coming</li>
+                    <li id="li5">30DaysOfDataAnalysis Challenge Coming</li>
+                    <li id="li5">30DaysOfReactNative Challenge Coming</li>
+                    <li id="li6">30DaysOfMachineLearning Challenge Coming</li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            //Modifying h1
+            function modifiedH1(){
+                const h1_1 = document.querySelector('#h1-1')
+                h1_1.style.textAlign = 'center'
+                const h1_2 = document.querySelector('#h1-2')
+                h1_2.style.fontSize = '250%'
+                const changeColor = () => {
+                    let color = '#'
+                    for (let i = 0; i < 3; i++)
+                    {
+                        let factor = Math.floor(Math.random() * 256).toString(16)
+                        color += factor
+                    }
+                    return color
+                }
+                setInterval(() => {
+                    h1_2.style.color = changeColor()
+                }, 1000)
+            }
+            modifiedH1()
+
+            //Modifyng h2
+            function modifiedH2() {
+                const h2 = document.querySelector('#h2')
+                h2.style.textAlign = 'center'
+                h2.style.fontFamily = "Times New Roman"
+                h2.style.fontWeight = 'lighter'
+                h2.style.textDecorationLine = 'underline'
+            }
+            modifiedH2()
+            
+            //Modifying h3
+            function modifiedH3()
+            {
+                const h3 = document.querySelector('#h3')
+                const clock =() => {
+                    let timing = new Date()
+                    let month = timing.getMonth() + 1
+                    switch (month) {
+                        case 1:
+                            month = 'January'
+                            break
+                        case 2:
+                            month = 'February'
+                            break
+                        case 3:
+                            month = 'March'
+                            break
+                        case 4:
+                            month = 'April'
+                            break
+                        case 5:
+                            month = 'May'
+                            break
+                        case 6:
+                            month = 'June'
+                            break
+                        case 7:
+                            month = 'July'
+                            break
+                        case 8:
+                            month = 'August'
+                            break
+                        case 9:
+                            month = 'September'
+                            break
+                        case 10:
+                            month = 'Octorber'
+                            break
+                        case 11:
+                            month = 'November'
+                            break 
+                        default:
+                            month = 'December'
+                            break;
+                    }
+                    let date = timing.getDate()
+                    let year = timing.getFullYear()
+                    let hours = timing.getHours()
+                    if (hours < 10)
+                    {
+                        hours = '0' + hours
+                    }
+                    let minutes = timing.getMinutes()
+                    if (minutes < 10)
+                    {
+                        minutes = '0' + minutes
+                    }
+                    let seconds = timing.getSeconds()
+                    if (seconds < 10)
+                    {
+                        seconds = '0' + seconds
+                    }
+                    return `${month} ${date},${year} ${hours}:${minutes}:${seconds}`
+                }
+                setInterval(() => {
+                    h3.textContent = clock()
+                }, 1000)
+                h3.style.textAlign = 'center'
+                h3.style.fontFamily = 'Times New Roman'
+                h3.style.fontWeight = 'lighter'
+                const changeColor = () => {
+                    let color = '#'
+                    for (let i = 0; i < 3; i++)
+                    {
+                        let factor = Math.floor(Math.random() * 256).toString(16)
+                        color += factor
+                    }
+                    return color
+                }
+                setInterval(() => {
+                    h3.style.backgroundColor = changeColor()
+                }, 1000)
+                h3.style.display = 'table'
+                h3.style.margin = '0px auto 0px auto'
+                h3.style.padding = '5px'
+            }
+            modifiedH3()
+            
+            function modifiedUl() {
+                const lists = document.querySelector('.lists')
+                lists.style.textAlign = 'center'
+                const ul = document.querySelector('ul')
+                ul.style.display = 'inline-block'
+                ul.style.textAlign = 'left'
+                ul.style.listStyleType = 'none'
+                const lis = document.querySelectorAll('li')
+                for (const li of lis)
+                {
+                    if (li.textContent.includes('Done'))
+                    {
+                        li.style.backgroundColor = 'green'
+                    }
+                    if (li.textContent.includes('Ongoing'))
+                    {
+                        li.style.backgroundColor = 'yellow'
+                    }
+                    if (li.textContent.includes('Coming'))
+                    {
+                        li.style.backgroundColor = 'red'
+                    }
+                    li.style.padding = '10px 300px 10px 10px'
+                    li.style.fontSize = '20px'
+                    li.style.border = '2px solid white'
+                    li.style.fontFamily = 'Times New Roman'
+                    li.style.fontWeight = 'lighter'
+                }
+            }
+            modifiedUl()
+        </script>
+    </body>
+</html>
