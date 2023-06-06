@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" /> <!--Search 'Character set' for more information-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--For the device's screen-->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" /> <!--Instruct IE to use its lastest rendering engine-->
+        <title>Mini Projet 8: World Countries Data</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" /> <!--get the fontFamily 'Montserrat'-->
+        <link rel="stylesheet" href="./style.css" /> <!--This is used to add the .css file to .html-->
+    </head>
+    <body>
+        <header id="countries">
+            <h2>World Countries Data</h2>
+            <p class="subtitle"></p>
+            <p class="feedback"></p>
+        </header>
+        <main>
+            <div class="wrapper">
+                <div class="graph-button">
+                    <button class="population">Population</button>
+                    <button class="languages">Languages</button>
+                </div>
+                <h4 class="graph-title"></h4>
+                <div class="graphs">
+                    <div class="graph-wrapper" id="stat">
+                    </div>                                     
+                </div>
+            </div>
+        </main>
+        <script src="./countries_data.js"></script>
+        <script src="./main.js" type="module"></script>
+    </body>
+</html>
+
+<!--Can use chrt.js/chart.css to print graphs with various available layout-->

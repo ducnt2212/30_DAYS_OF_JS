@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mini Project 6</title>
+    </head>
+    <body>
+            <h1 id="before">Press any keyboard key</h1>
+        </div>
+
+        <script>
+            function modifyH1_1(){
+                const before = document.querySelector('#before')
+                before.style.fontFamily = 'Helvetica'
+                before.style.fontWeight = 'normal'
+                before.style.border = 'thick solid white'
+                before.style.boxShadow = '5px 5px 10px 5px gray'
+                before.style.margin = '25% 30% auto 30%'
+                before.style.textAlign = 'center'
+                before.style.fontSize = '1.5cm'
+                before.style.padding = '0.5% 3% 0.5% 3%'
+                before.style.minWidth = 'fit-content'
+                document.body.appendChild(before)
+            }
+        modifyH1_1()
+
+        function modifyH1_2() {
+            const before = document.querySelector('#before')
+            const after_1 = document.createElement('h1')
+            after_1.id = 'after_1'
+            document.body.appendChild(after_1)
+
+            const after_2 = document.createElement('h1')
+            after_2.id = 'after_2'
+            document.body.appendChild(after_2)
+
+            document.body.addEventListener('keydown', e => {
+                    before.textContent = 'You pressed '
+                    
+                    if (e.key == ' ')
+                    {
+                        after_1.innerHTML = 'Space'
+                    } else
+                    {
+                        after_1.innerHTML = e.key
+                    }
+                    after_1.style.fontFamily = 'Helvetica'
+                    after_1.style.fontWeight = 'normal'
+                    after_1.style.display = 'inline'
+                    after_1.style.fontSize = '1.5cm'
+                    after_1.style.color = 'green'
+                    before.appendChild(after_1)
+
+                    before.style.margin = '20% 30% auto 30%'
+
+                    after_2.innerHTML = e.keyCode
+                    before.style.fontFamily = 'Helvetica'
+                    after_2.style.fontWeight = 'normal'
+                    after_2.style.boxShadow = '1px 1px 5px 5px lightgray'
+                    after_2.style.border = '1px solid white'
+                    after_2.style.margin = '2% 45% 10% 45%'
+                    after_2.style.textAlign = 'center'
+                    after_2.style.fontSize = '3cm'
+                    after_2.style.padding = '1%'
+                    after_2.style.paddingBottom = '2.5%'
+                    after_2.style.display = 'block'
+                    after_2.style.color = 'green'
+                    after_2.style.textAlign = 'center'
+                    after_2.style.minWidth = 'fit-content'
+            })
+        }
+        modifyH1_2()
+        </script>
+    </body>
+</html>

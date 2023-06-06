@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mini Project 5</title>
+    </head>
+    <body>
+        <h1>Number Generator</h1>
+        <h2>30DaysOfJavaScript:DOM Day 3</h2>
+        <h3>Author: Asabeneh Yetayeh</h3>
+        <div class="input">
+            <p></p>
+            <input type="text" placeholder="Generate more numbers..."/>
+            <button>Generate numbers</button>
+        </div>
+        <div class="wrapper"></div>
+        <script>
+            function modifyH1() {
+                const h1 = document.querySelector('h1')
+                h1.style.textAlign = 'center'
+                h1.style.color = 'green'
+                h1.style.fontFamily = 'Helvetica'
+                h1.style.fontWeight = 'lighter'
+                h1.style.fontSize = '300%'
+                h1.style.margin = '0px auto auto auto'
+            }
+            modifyH1()
+
+            function modifyH2() {
+                const h2 = document.querySelector('h2')
+                h2.style.textAlign = 'center'
+                h2.style.fontFamily = 'Helvetica'
+                h2.style.fontWeight = 'lighter'
+                h2.style.fontSize = '170%'
+                h2.style.margin = 'auto auto auto auto'
+            }
+            modifyH2()
+
+            function modifyH3() {
+                const h3 = document.querySelector('h3')
+                h3.style.textAlign = 'center'
+                h3.style.fontFamily = 'Helvetica'
+                h3.style.fontWeight = 'lighter'
+                h3.style.margin = '0.5% auto auto auto'
+            }
+            modifyH3()
+
+            function modifyDivInput() {
+                const container = document.querySelector('.input')
+                container.style.textAlign = 'center'
+                
+                const input = document.querySelector('input')
+                input.style.borderColor = 'green'
+                input.style.width = '45%'
+                input.style.height = '18px'
+                input.style.fontSize = '150%'
+                input.style.padding = '0.6% 0.5% 0.6% 0.5%'
+                input.style.marginRight = '1%'
+
+                const button = document.querySelector('button')
+                button.style.backgroundColor = 'green'
+                button.style.color = 'white'
+                button.style.width = '16'
+                button.style.height = '44px'
+                button.style.fontSize = '150%'
+                button.style.padding = '0.2% 0.1% 0.2% auto'
+                button.style.marginLeft = '0.5%'
+
+
+                let isPrinted = false
+                let printedNumber = input.value
+                button.addEventListener('click', () => {
+                    const p = document.querySelector('p')
+
+                    if (input.value == '')
+                    {
+                        p.textContent = 'Enter number value on the input field to generate numbers'
+                    } else if (!(parseFloat(input.value) >= 0 ) && !(parseFloat(input.value) < 0))
+                    {
+                        p.textContent = 'Input value must be a number'
+                    } else
+                    {
+                        p.textContent = ''
+                        if (isPrinted == false)
+                        {
+                            modifyDivWrapper()
+                            isPrinted = true
+                        } else if (printedNumber != input.value) {
+                            const number = document.querySelectorAll('.number')
+                            printedNumber = number[number.length - 1].textContent
+                            for (const num of number)
+                            {
+                                if (num.textContent > printedNumber)
+                                {
+                                    printedNumber = num.textContent
+                                }
+                            }
+                            const wrapper = document.querySelector('.wrapper')
+                            for (const num of number)
+                            {
+                                wrapper.removeChild(num)
+                            }
+
+                            modifyDivWrapper()
+                        }
+                    }
+                    p.style.color = 'red'
+                    p.style.textAlign = 'left'
+                    p.style.marginLeft = '17.5%'
+                    p.style.marginBottom = '0.5%'
+                    
+                })
+            }
+            modifyDivInput()
+
+            function modifyDivWrapper() {
+                const wrapper = document.querySelector('.wrapper')
+                wrapper.style.display = 'grid'
+                wrapper.style.gridTemplateColumns = 'repeat(9, 1fr)'
+                wrapper.style.margin = '1% 20% auto 13%'
+                wrapper.style.gap = '5px'
+                wrapper.style.fontFamily = 'Helvetica'
+
+                const input = document.querySelector('input')
+                for (let i = 0; i < input.value; i++)
+                {
+                    let number = document.createElement('div')
+                    number.className = 'number'
+                    number.textContent = i
+                    number.style.textAlign = 'center'
+                    wrapper.appendChild(number)
+
+                    function primeNumberCheck(number) {
+                        let Check = true
+                        if (number.textContent < 2)
+                        {
+                            return false
+                        } else if (number.textContent == 2)
+                        {
+                            return true
+                        } else
+                        {
+                            for (let i = 2; i < number.textContent; i++)
+                            {
+                                if (number.textContent % i == 0)
+                                {
+                                    Check = false
+                                }
+                            }
+                        }
+                        return Check
+                    }
+                    function changeColor(number) {
+                        if (number.textContent % 2 == 0)
+                        {
+                            number.style.backgroundColor = 'green'
+                        } else if (primeNumberCheck(number) == true)
+                        {
+                            number.style.backgroundColor = 'red'
+
+                        } else
+                        {
+                            number.style.backgroundColor = 'yellow'
+                        }
+                    }
+                    changeColor(number)
+                    number.style.color = 'white'
+                    number.style.fontSize = '1.5cm'
+                } 
+            }
+        </script>
+    </body>
+</html>

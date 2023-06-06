@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document Object Model:30 Days Of JavaSCript</title>
+    </head>
+    <body>
+        <script>
+            function createH1(){
+                const title = document.createElement('h1')
+                title.className = 'title'
+                title.id = 'h1'
+                title.textContent = 'Number Generator'
+                title.style.textAlign = 'center'
+                title.style.fontFamily = 'Arial'
+                title.style.fontWeight = '400'
+                title.style.fontSize = '1cm'
+                title.style.marginBottom = '10px'
+                document.body.appendChild(title)
+            }
+            createH1()
+            function createH2() {
+                const title = document.createElement('h2')
+                title.className = 'title'
+                title.id = 'h2'
+                title.textContent = '30DaysOfJavaScript:DOM Day 2'
+                title.style.textAlign = 'center'
+                title.style.fontWeight = 'lighter'
+                title.style.textDecorationLine = 'underline'
+                title.style.margin = '10px 10px'
+                document.body.appendChild(title)
+            }
+            createH2()
+            function createH3() {
+                const title = document.createElement('h3')
+                title.className = 'title'
+                title.id = 'h3'
+                title.textContent = 'Author: Asabeneh Yetayeh'
+                title.style.textAlign = 'center'
+                title.style.fontWeight = 'lighter'
+                title.style.marginTop = '10px'
+                title.style.textDecorationLine = 'underline'
+                document.body.appendChild(title)
+            }
+            createH3()
+            function createNumbers() {
+                const container = document.createElement('div')
+                container.style.display = 'grid'
+                container.style.gridTemplateColumns = '200px 200px 200px 200px 200px 200px'
+                for (let i = 0; i <= 101; i++)
+                {
+                    let number = document.createElement('div')
+                    number.className = 'number'
+                    number.innerHTML = i
+                    number.style.textAlign = 'center'
+                    number.style.fontSize = '1.5cm'
+                    number.style.color = 'white'
+                    number.style.fontFamily = 'Arial'
+                    number.style.padding = '10px 5px'
+                    container.appendChild(number)
+                    const primeNumber = (n) => {
+                        let Check = true
+                        if (n <= 1)
+                        {
+                            return false
+                        } else if (i == 2)
+                        {
+                            return true
+                        } else
+                        {
+                            for (let i = 2; i < n; i++)
+                            {
+                                if (n % i == 0)
+                                {
+                                    Check = false
+                                    break
+                                }
+                            }
+                        }
+                        return Check
+                    }
+                    if (i % 2 == 0)
+                    {
+                        number.style.backgroundColor = 'green'
+                    } else if (primeNumber(i) == true)
+                    {
+                        number.style.backgroundColor = 'red'
+                    } else
+
+                    {
+                        number.style.backgroundColor = 'rgb(255, 220, 0)'
+                    }
+                }
+
+                document.body.append(container)
+
+                container.style.margin = 'auto auto auto 325px'
+                container.style.gap = '10px'
+            }
+            createNumbers()
+        </script>
+    </body>
+</html>

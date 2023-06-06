@@ -1,0 +1,8 @@
+input {
+    border: 1px solid lightgray;
+}
+
+/*Change color while typing*/
+input:focus {
+    outline: none;
+}

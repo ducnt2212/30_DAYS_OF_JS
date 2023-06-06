@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mini Project 13</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <header>
+            <h1 id="title">World Countries Data</h1>
+            <div id="subtitle"></div>
+            <div id="feedback"></div>
+        </header>
+        <main>
+            <div class="input-container">
+                <input type="text" placeholder="Search countries by name, city and languages" />
+                <div class="button-wrapper">
+                    <button id="name">NAME</button>
+                    <button id="capital">CAPITAL</button>
+                    <button id="population">POPULATION</button>
+                    <a href="#stat" id="graphs"></a> <!--Click to move to href-->
+                </div>
+            </div>
+            <div class="grid-container"></div>
+            <div class="graph-button-wrapper">
+                <button id="population-graph">POPULATION</button>
+                <button id="languages-graph">LANGUAGES</button>
+                <div id="graph-title"></div>
+            </div>
+            <div class="graphs">
+                <div class="graph-wrapper" id="stat"></div>
+            </div>
+        </main>
+        <footer></footer>
+        <script src="main.js" type="module"></script>
+    </body>
+</html>

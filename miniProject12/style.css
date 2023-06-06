@@ -1,0 +1,10 @@
+.character {
+    position: relative;
+    animation: fadeIn 3s infinite;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    90% {opacity: 1;}
+    100% {opacity: 0;}
+}

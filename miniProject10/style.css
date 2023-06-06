@@ -1,0 +1,26 @@
+
+
+/* create animation for the titles-wrapper */
+.title-text {
+    width: 150px;
+    position: relative;
+    animation: myMove 2.5s infinite, fadeInTitle 2.5s infinite;
+}
+
+@keyframes myMove {
+    from {left: -50px; }
+    to {left: 50px;}
+}
+
+@keyframes fadeInTitle {
+    from {opacity: 0;}
+}
+
+/* create animation for the information-technologies */
+.technology {
+    position: relative;
+    animation: fadeIn 2.5s infinite;
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+}

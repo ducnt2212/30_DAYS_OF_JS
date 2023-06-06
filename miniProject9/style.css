@@ -1,0 +1,8 @@
+/* center the placeholder but the input begins at the left*/
+input::placeholder {
+    text-align: center;
+}
+
+input:placeholder-shown {
+    text-align: left;
+}
